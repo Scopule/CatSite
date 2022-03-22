@@ -1,0 +1,61 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #F3F3F3;
+}
+header .info{
+    background-color: #DEDEDE;
+    text-align: right;
+
+}
+header h1{
+    background-color: #80EEC3;
+    margin: 0;
+    padding: 20px 0 20px 15px;
+}
+nav{
+    background-color: #80EEC3;
+    padding: 10px;
+}
+nav ul{
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
+nav ul li{
+    width: 200px;
+    display: inline-block;
+    color:black;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+nav ul li a, nav ul li a:visited, nav ul li a:active{
+    display: inline-block;
+    color: black;
+    text-decoration: none;
+    padding: 15px 0;
+    width: 100%;
+    border-radius: 3px;
+    transition: all 250ms;
+}
+nav ul li a:hover{
+    color:#6BCBA5;
+}
+footer{
+    background-color: #DEDEDE;
+}
+.card {
+    display: inline-block;
+    padding: 20px;
+    margin: 0;
+    vertical-align: top;
+}
+.card .image img,.card .image a:visited, .card .image a:active{
+    width: 500px;
+    height: 600px;
+}
+
