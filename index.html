@@ -11,6 +11,7 @@
       function NotReadyAlert()
       {
         alert("Sorry, not ready yet!\nИзвините еще не готово!");
+        return false;
       }
 
     </script>
@@ -19,14 +20,14 @@
 <body>
   <header>
     <div class="info">Телефон: 8 800-535-35-35</div>
-    <h1>Продаем кота Маркет. (Котомаркет)</h1>
+    <h1>Продаем котов Маркет. (Котомаркет)</h1>
   </header>
   <nav class="main-menu">
   <ul>
     <li><a href = "index.html">Коты</a></li>
-    <li><a href = "contact.html" onclick = "NotReadyAlert()" >Контакты</a></li>
-    <li><a href = "delivery.html" onclick = "NotReadyAlert()" >КотоДоставка</a></li>
-    <li><a href = "promotion.html" onclick = "NotReadyAlert()" >КотоАкции</a></li>
+    <li><a href = "contact.html" onclick = "return NotReadyAlert()" >Контакты</a></li>
+    <li><a href = "delivery.html" onclick = "return NotReadyAlert()" >КотоДоставка</a></li>
+    <li><a href = "promotion.html" onclick = "return NotReadyAlert()" >КотоАкции</a></li>
     <li>
     <div class="searchbox">
       <input type="search" placeholder="Поиск по котам"> 
