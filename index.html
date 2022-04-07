@@ -8,6 +8,11 @@
       console.log("Вывод сообщения");
       console.error("Вывод ошибки");
       console.warn("Вывод предупреждения");
+      function NotReadyAlert()
+      {
+        alert("Sorry, not ready yet!\nИзвините еще не готово!");
+      }
+
     </script>
 </head>
 
@@ -19,9 +24,9 @@
   <nav class="main-menu">
   <ul>
     <li><a href = "index.html">Коты</a></li>
-    <li><a href = "contact.html"> Контакты</a></li>
-    <li><a href = "delivery.html"> КотоДоставка</a></li>
-    <li><a href = "promotion.html"> КотоАкции</a></li>
+    <li><a href = "contact.html" onclick = "NotReadyAlert()" >Контакты</a></li>
+    <li><a href = "delivery.html" onclick = "NotReadyAlert()" >КотоДоставка</a></li>
+    <li><a href = "promotion.html" onclick = "NotReadyAlert()" >КотоАкции</a></li>
     <li>
     <div class="searchbox">
       <input type="search" placeholder="Поиск по котам"> 
