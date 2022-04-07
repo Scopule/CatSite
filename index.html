@@ -46,7 +46,10 @@
           card.style.backgroundColor = "";
         }, 2000);
       }
-
+      function CopyContact()
+      {
+        
+      }
       function Loaded()
       {
         let searchbox = document.getElementById("Search");
@@ -55,7 +58,13 @@
             search();
         });
       }
-
+      function FooterLoaded(){
+        let footer = document.getElementById(footer);
+        footer.addMouseListener("mousedown",function (mouse){
+          CopyContact();
+          console.log("Mouse pressed on footer");
+        });
+      }
     </script>
 </head>
 
@@ -129,7 +138,7 @@
 
       </div>
   </div>
-                <footer>
+                <footer onload="FooterLoaded()" id = "footer">
                   &copy; Версия 2021.1 Beta © 2022 ОАО «Колбасный завод №3» catMeat@mail.com
                 </footer>
 </body>
