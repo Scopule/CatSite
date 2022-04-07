@@ -13,11 +13,53 @@
         alert("Sorry, not ready yet!\nИзвините еще не готово!");
         return false;
       }
+      function Search()
+      {
+        let name = document.getElementById("Search").value;
+        let productNumber = null;
+        switch (name)
+        {
+            case 'Это просто кот':
+            productNumber = 0;
+              break;
+            case 'Это не просто кот':
+            productNumber = 1;
+              break;
+            case 'Это злой кот':
+            productNumber = 2;
+              break;
+            case 'Это страшный кот':
+            productNumber = 3;
+              break;
+            case 'Это страшный кот 2':
+            productNumber = 4;
+              break;
+        }
+
+        let cards = document.getElementsByClassName("card");
+        let card = cards[productNumber];
+        card.style.border = "1px dashed red";
+        card.style.backgroundColor = "Pink";
+
+        setTimeout(function(){
+          card.style.border = "none";
+          card.style.backgroundColor = "";
+        }, 2000);
+      }
+
+      function Loaded()
+      {
+        let searchbox = document.getElementById("Search");
+        searchbox.addEventListener("keydown",function (key){
+          if(key.key =="Enter")
+            search();
+        });
+      }
 
     </script>
 </head>
 
-<body>
+<body onload="Loaded()">
   <header>
     <div class="info">Телефон: 8 800-535-35-35</div>
     <h1>Продаем котов Маркет. (Котомаркет)</h1>
@@ -30,8 +72,8 @@
     <li><a href = "promotion.html" onclick = "return NotReadyAlert()" >КотоАкции</a></li>
     <li>
     <div class="searchbox">
-      <input type="search" placeholder="Поиск по котам"> 
-      <button>&#x1F50E;</button>
+      <input type="search" placeholder="Поиск по котам" id="Search"> 
+      <button onclick="Search()">&#x1F50E;</button>
     </div>
     </li>
   </ul>
