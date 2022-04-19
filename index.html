@@ -13,58 +13,59 @@
         alert("Sorry, not ready yet!\nИзвините еще не готово!");
         return false;
       }
-      function Search()
-      {
-        let name = document.getElementById("Search").value;
-        let productNumber = null;
-        switch (name)
-        {
-            case 'Это просто кот':
-            productNumber = 0;
-              break;
-            case 'Это не просто кот':
-            productNumber = 1;
-              break;
-            case 'Это злой кот':
-            productNumber = 2;
-              break;
-            case 'Это страшный кот':
-            productNumber = 3;
-              break;
-            case 'Это страшный кот 2':
-            productNumber = 4;
-              break;
+      /*
+      function alreadyAtMain() {
+        console.warn('You are already here!\nВы уже здесь!');
+        alert('You are already here!\nВы уже здесь!');
+        return false;
         }
-
-        let cards = document.getElementsByClassName("card");
+            
+      function openTime() {
+        console.warn('We are working from 10:00 to 22:00!\nМы работаем с 10 до 22 часов!');
+        alert('We are working from 10:00 to 22:00!\nМы работаем с 10 до 22 часов!');
+        return false;
+        }
+      */
+      function Search() {
+        let name = document.getElementById('Search').value;
+        let productNumber = null;
+        if (name == 'Это просто кот') {
+          productNumber = 0;
+        } else if (name == 'Это не просто кот'){
+          productNumber = 1;
+        } else if (name == 'Это злой кот'){
+          productNumber = 2;
+        } else if (name == 'Это страшный кот'){
+          productNumber = 3;
+        } else if (name == 'Это страшный кот 2'){
+          productNumber = 4;
+        } else {
+          alert('Товар не найден');
+        }
+        let cards = document.getElementsByClassName('card');
         let card = cards[productNumber];
-        card.style.border = "1px dashed red";
-        card.style.backgroundColor = "Pink";
+        card.style.border = '1px dashed red';
+        card.style.backgroundColor = 'Pink';
 
-        setTimeout(function(){
-          card.style.border = "none";
-          card.style.backgroundColor = "";
+        setTimeout(function () {
+          card.style.border = 'none';
+          card.style.backgroundColor = '';
         }, 2000);
       }
-      function CopyContact()
-      {
-        
-      }
-      function Loaded()
-      {
-        let searchbox = document.getElementById("Search");
-        searchbox.addEventListener("keydown",function (key){
-          if(key.key =="Enter")
-            search();
+      function Loaded() {
+        let searchbox = document.getElementById('Search');
+        searchbox.addEventListener("keydown", function (key){
+          if(key.key =='Enter')
+            Search();
         });
       }
-      function FooterLoaded(){
+      /*function FooterLoaded(){
         let footer = document.getElementById(footer);
         footer.addMouseListener("mousedown",function (mouse){
           CopyContact();
           console.log("Mouse pressed on footer");
         });
-      }
+      }*/
     </script>
 </head>
 
