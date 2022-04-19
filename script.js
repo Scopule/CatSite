@@ -8,16 +8,18 @@ console.log("Вывод сообщения");
       }
       function showModal(messageText, buttonText){
         let modal = document.getElementsByClassName('modal')[0];
-        modal.style.display = 'block';
+        modal.style.visibility = 'visible';
+        modal.style.opacity ='1';
 
         let message = modal.getElementsByClassName('message')[0];
         message.innerHTML=messageText;
         let button = modal.getElementsByTagName('button')[0];
         button.innerHTML = buttonText;
 
-        document.body.style.overflow = 'hidden';
+        document.body.style.overflow = 'visible';
         let overlay = document.getElementsByClassName('overlay')[0];
-        overlay.style.display = 'block';
+        overlay.style.visibility = 'visible';
+        overlay.style.opacity ='1';
       }
       /*
       function alreadyAtMain() {
@@ -67,11 +69,18 @@ console.log("Вывод сообщения");
       }
       function hideModal(){
           let modal = document.getElementsByClassName('modal')[0];
-          modal.style.display ='none';
+          setTimeout(function(){
+            modal.style.visibility = 'hidden';
+          },350);
+          modal.style.opacity ='0';
 
           document.body.style.overflow = 'auto';
           let overlay = document.getElementsByClassName('overlay')[0];
-          overlay.style.display ='none';
+          setTimeout(function(){
+            overlay.style.visibility = 'hidden';
+          },200);
+          modal.style.visibility = 'hidden';
+          modal.style.opacity ='0';
       }
       /*function FooterLoaded(){
         let footer = document.getElementById(footer);
