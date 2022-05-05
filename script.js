@@ -1,6 +1,3 @@
-console.log("Вывод сообщения");
-      console.error("Вывод ошибки");
-      console.warn("Вывод предупреждения");
       function NotReadyAlert()
       {
         showModal('Sorry, not ready yet<br>Извините, еще не готово','Ладно');
@@ -21,19 +18,6 @@ console.log("Вывод сообщения");
         overlay.style.visibility = 'visible';
         overlay.style.opacity ='1';
       }
-      /*
-      function alreadyAtMain() {
-        console.warn('You are already here!\nВы уже здесь!');
-        alert('You are already here!\nВы уже здесь!');
-        return false;
-        }
-            
-      function openTime() {
-        console.warn('We are working from 10:00 to 22:00!\nМы работаем с 10 до 22 часов!');
-        alert('We are working from 10:00 to 22:00!\nМы работаем с 10 до 22 часов!');
-        return false;
-        }
-      */
       function Search() {
         let name = document.getElementById('Search').value;
         let productNumber = null;
@@ -82,10 +66,3 @@ console.log("Вывод сообщения");
           modal.style.visibility = 'hidden';
           modal.style.opacity ='0';
       }
-      /*function FooterLoaded(){
-        let footer = document.getElementById(footer);
-        footer.addMouseListener("mousedown",function (mouse){
-          CopyContact();
-          console.log("Mouse pressed on footer");
-        });
-      }*/
