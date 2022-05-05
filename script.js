@@ -55,6 +55,7 @@
           {href: '',text: 'Контакты'},
           {href: '',text: 'Доставка'},
           {href: '',text: 'Акции'},
+          {href: '',text: 'О нас'},
         ];
 
         for(let i = 0; i<items.length; i++){
