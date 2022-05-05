@@ -1,6 +1,7 @@
-      function NotReadyAlert()
+      function NotReadyAlert(event)
       {
         showModal('Sorry, not ready yet<br>Извините, еще не готово','Ладно');
+        event.preventDefault();
         return false;
       }
       function showModal(messageText, buttonText){
@@ -44,12 +45,41 @@
           card.style.backgroundColor = '';
         }, 2000);
       }
+      function GenerateMenu()
+      {
+        let menu = document.querySelector('nav.main-menu ul');
+        menu.innerHTML = '';
+
+        let items = [
+          {href: 'index.html',text: 'Товары'},
+          {href: '',text: 'Контакты'},
+          {href: '',text: 'Доставка'},
+          {href: '',text: 'Акции'},
+        ];
+
+        for(let i = 0; i<items.length; i++){
+          let link = document.createElement('a');
+          link.innerText = items[i].text;
+          link.href = items[i].href;
+
+          if(items[i].href == ''){
+            link.addEventListener('click', NotReadyAlert);
+          }
+
+          let menuItem = document.createElement('li');
+          menuItem.appendChild(link);
+
+          menu.appendChild(menuItem);
+        }
+      }
       function Loaded() {
         let searchbox = document.getElementById('Search');
         searchbox.addEventListener("keydown", function (key){
           if(key.key =='Enter')
             Search();
         });
+
+        GenerateMenu();
       }
       function hideModal(){
           let modal = document.getElementsByClassName('modal')[0];
@@ -66,3 +96,4 @@
           modal.style.visibility = 'hidden';
           modal.style.opacity ='0';
       }
+      
