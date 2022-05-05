@@ -47,9 +47,11 @@
       }
       function GenerateMenu()
       {
+        //ссылка на кусок где генерировать
         let menu = document.querySelector('nav.main-menu ul');
         menu.innerHTML = '';
 
+        //массив с штукоми
         let items = [
           {href: 'index.html',text: 'Товары'},
           {href: '',text: 'Контакты'},
@@ -58,19 +60,47 @@
           {href: '',text: 'О нас'},
         ];
 
+        //создание штук
         for(let i = 0; i<items.length; i++){
+          //Создает кусок <a></a>
           let link = document.createElement('a');
+          //Задает параметры <a></a>
           link.innerText = items[i].text;
           link.href = items[i].href;
-
+          //Нет ссылки
           if(items[i].href == ''){
             link.addEventListener('click', NotReadyAlert);
           }
-
+          //Создает ссылку <li></li>
           let menuItem = document.createElement('li');
           menuItem.appendChild(link);
 
           menu.appendChild(menuItem);
+        }
+      }
+      function GenerateProducts()
+      {
+        let catalog = document.querySelector('div.catalog');
+        // catalog.innerHTML = '';
+
+        let products = [
+          {href: 'product1.html',image: 'кот.jpg',name: 'Это просто кот',price: '120'},
+          {href: 'product2.html',image: 'кот2.jpeg',name: 'Это не просто кот',price: '4000'},
+          {href: 'product3.html',image: 'кот3.jpg',name: 'Это злой кот',price: '200'},
+          {href: 'product4.html',image: 'кот4.jpg',name: 'Это страшный кот',price: '125'},
+          {href: 'product5.html',image: 'кот5.jpeg',name: 'Это страшный кот 2',price: '700'},
+        ];
+
+        for(let i = 0; i<products.length; i++){
+          let card = document.createElement('div');
+          card.className = 'card';
+          card.innerHTML = '<a href="'+ products[i].href +'">' + 
+          '<div class="image"><img src="'+ products[i].image +'"></div>' +
+          '<div class="product-name">'+ products[i].name +'</div>' +
+          '<div class="price">Цена: '+products[i].price+' &#8381;</div>' +
+          '</a>' + '<div class="button"><button type="button">В корзину</button><input type ="number" placeholder="кол-во"></div>';
+
+          catalog.appendChild(card);
         }
       }
       function Loaded() {
@@ -81,6 +111,7 @@
         });
 
         GenerateMenu();
+        GenerateProducts();
       }
       function hideModal(){
           let modal = document.getElementsByClassName('modal')[0];
