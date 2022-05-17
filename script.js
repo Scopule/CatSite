@@ -1,3 +1,11 @@
+let products = [
+  {href: 'product1.html',image: 'кот.jpg',name: 'Это просто кот',price: '120', info: 'Тупой'},
+  {href: 'product2.html',image: 'кот2.jpeg',name: 'Это не просто кот',price: '4000', info: 'Умный'},
+  {href: 'product3.html',image: 'кот3.jpg',name: 'Это злой кот',price: '200', info: 'Любит есть'},
+  {href: 'product4.html',image: 'кот4.jpg',name: 'Это страшный кот',price: '125', info: 'Воняет'},
+  {href: 'product5.html',image: 'кот5.jpeg',name: 'Это страшный кот 2',price: '700', info: 'Наркоман'},
+];
+
       function NotReadyAlert(event)
       {
         showModal('Sorry, not ready yet<br>Извините, еще не готово','Ладно');
@@ -19,37 +27,40 @@
         overlay.style.visibility = 'visible';
         overlay.style.opacity ='1';
       }
-      function Search() {
-        let name = document.getElementById('Search').value;
-        let productNumber = null;
-        if (name == 'Это просто кот') {
-          productNumber = 0;
-        } else if (name == 'Это не просто кот'){
-          productNumber = 1;
-        } else if (name == 'Это злой кот'){
-          productNumber = 2;
-        } else if (name == 'Это страшный кот'){
-          productNumber = 3;
-        } else if (name == 'Это страшный кот 2'){
-          productNumber = 4;
-        } else {
-          alert('Товар не найден');
-        }
-        let cards = document.getElementsByClassName('card');
-        let card = cards[productNumber];
-        card.style.border = '1px dashed red';
-        card.style.backgroundColor = 'Pink';
-
-        setTimeout(function () {
-          card.style.border = 'none';
-          card.style.backgroundColor = '';
-        }, 2000);
+      function ShowProductInfo(product){
+        showModal(`
+          <div><img src="${product.image}"></div>
+          <div>${product.name}</div>
+          <div>${product.price} &#8381;</div>
+          <div><i>${product.info}</i></div>
+        `,"Ладно");
       }
+      function Search() {
+        let cards = document.getElementsByClassName('card');
+        let name = document.getElementById('Search').value;
+        let nameRegExp = new RegExp(name, 'i');
+        for(let i = 0; i<products.length; i++) {
+        let product = products[i];
+        if(nameRegExp.test(product.name)) {
+        let card = cards[i];
+        card.style.border = '1px dashed red';
+        card.style.backgroundColor = 'yellow';
+        setTimeout(function() {
+        card.style.border = 'none';
+        card.style.backgroundColor = '';
+        }, 2000);
+      }}}
+
       function GenerateMenu()
       {
         //ссылка на кусок где генерировать
         let menu = document.querySelector('nav.main-menu ul');
-        menu.innerHTML = '';
+        menu.innerHTML = `<li>
+        <div class="searchbox">
+          <input type="search" placeholder="Поиск по котам" id="Search"> 
+          <button onclick="Search()">&#x1F50E;</button>
+        </div>
+        </li>`;
 
         //массив с штукоми
         let items = [
@@ -77,28 +88,25 @@
 
           menu.appendChild(menuItem);
         }
+        
       }
       function GenerateProducts()
       {
         let catalog = document.querySelector('div.catalog');
         // catalog.innerHTML = '';
 
-        let products = [
-          {href: 'product1.html',image: 'кот.jpg',name: 'Это просто кот',price: '120'},
-          {href: 'product2.html',image: 'кот2.jpeg',name: 'Это не просто кот',price: '4000'},
-          {href: 'product3.html',image: 'кот3.jpg',name: 'Это злой кот',price: '200'},
-          {href: 'product4.html',image: 'кот4.jpg',name: 'Это страшный кот',price: '125'},
-          {href: 'product5.html',image: 'кот5.jpeg',name: 'Это страшный кот 2',price: '700'},
-        ];
-
         for(let i = 0; i<products.length; i++){
           let card = document.createElement('div');
           card.className = 'card';
-          card.innerHTML = '<a href="'+ products[i].href +'">' + 
+          card.innerHTML = '<a href="#">' + 
           '<div class="image"><img src="'+ products[i].image +'"></div>' +
           '<div class="product-name">'+ products[i].name +'</div>' +
-          '<div class="price">Цена: '+products[i].price+' &#8381;</div>' +
-          '</a>' + '<div class="button"><button type="button">В корзину</button><input type ="number" placeholder="кол-во"></div>';
+          '<div class="price">Цена: '+products[i].price +' &#8381;</div>' +
+          '</a>' + '<div class="button"><button type="button">В корзину </button><input type ="number" placeholder="кол-во"></div>';
+
+          card.querySelector('a').addEventListener('click',function(){
+            ShowProductInfo(products[i]);
+          });
 
           catalog.appendChild(card);
         }
