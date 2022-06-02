@@ -96,13 +96,23 @@ let products = [
         // catalog.innerHTML = '';
 
         for(let i = 0; i<products.length; i++){
+          let product = products[i];
           let card = document.createElement('div');
           card.className = 'card';
           card.innerHTML = '<a href="#">' + 
           '<div class="image"><img src="'+ products[i].image +'"></div>' +
           '<div class="product-name">'+ products[i].name +'</div>' +
           '<div class="price">Цена: '+products[i].price +' &#8381;</div>' +
-          '</a>' + '<div class="button"><button type="button">В корзину </button><input type ="number" placeholder="кол-во"></div>';
+          '</a>' + 
+          '<div>' +
+            '<input type ="number" value = "1" min = "1">'+
+            '<button>Купить</button>'+
+          '<div>';
+
+          card.querySelector('button').addEventListener('click',function(e){
+              alert('Не готово!');
+              return false;
+          });
 
           card.querySelector('a').addEventListener('click',function(){
             ShowProductInfo(products[i]);
