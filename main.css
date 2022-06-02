@@ -111,6 +111,7 @@ img:hover{
     padding-top: 30px;
 }
 #productCount{
+    display: none;
     position: absolute;
     top: 110px;
     right: 60px;

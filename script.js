@@ -90,6 +90,23 @@ let products = [
         }
         
       }
+      function addToCart(productNum, productCount){
+        productCount = parseInt(productCount);
+        if (products[productNum].countInCart == undefined)
+              products[productNum].countInCart = productCount;
+        else
+              products[productNum].countInCart += productCount;
+        let cartProductCount = 0;
+        for(let i = 0; i<products.length; i++){
+          if(products[i].countInCart !== undefined)
+            cartProductCount += products[i].countInCart;
+        }
+
+        let count = document.getElementById('productCount');
+        count.innerText = cartProductCount;
+        count.style.display = 'inline';
+
+      }
       function GenerateProducts()
       {
         let catalog = document.querySelector('div.catalog');
@@ -110,7 +127,9 @@ let products = [
           '<div>';
 
           card.querySelector('button').addEventListener('click',function(e){
-              alert('Не готово!');
+              let input = e.target.previousElementSibling;
+              let count = input.value;
+              addToCart(i, count);
               return false;
           });
 
