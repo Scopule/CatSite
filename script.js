@@ -105,7 +105,6 @@ let products = [
         let count = document.getElementById('productCount');
         count.innerText = cartProductCount;
         count.style.display = 'inline';
-
       }
       function GenerateProducts()
       {
