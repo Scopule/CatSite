@@ -102,4 +102,20 @@ img:hover{
 .modal .message img{
     max-width: 300px;
     }
+.trolley{
+    position: absolute;
+    right: 20px;
+}
+.trolley img{
+    width: 90px;
+    padding-top: 30px;
+}
+#productCount{
+    position: absolute;
+    top: 110px;
+    right: 60px;
+    border-radius: 50%;
+    background-color: cornflowerblue;
+    padding: 7px;
+}
 
