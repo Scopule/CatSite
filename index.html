@@ -2,20 +2,37 @@
 <html lang="ru">
 <head>
     <meta charset="utf-8">
-    <title>Вершинин Глеб, Старцева Дарья. Лабораторные по курсу "Интернет-программирование"</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ruslan+Display&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="main.css">
+    <title>Магазин</title>
     <script src="script.js"></script>
 </head>
-
 <body onload="Loaded()">
-  <header>
-    <div class="info">Телефон: 8 800-535-35-35</div>
-    <div class="trolley">
-      <img src="cat.png">
-      <span id="productCount">0</span>
+  <div class="header">
+    <div class="logo">
+      <img src="Logo.png" alt="">
     </div>
-    <h1>Продаем котов Маркет. (Котомаркет)</h1>
-  </header>
+    <div class = "innerHeader"><span style="color: #c00000;">К</span>расная кузница</div>
+    <div class="menu">
+      <div class="tabContainer">
+        <a href="index.html">Каталог</a>
+        <a href="contacts.html">Контакты</a>
+        <a href="delivery.html">Самовывоз</a>
+        <a href="promo.html">Акции</a>
+        <!-- <a href="us.html">Us</a> -->
+
+        <div class="searchbox">
+          <input type="search" placeholder="Поиск" id="Search"> 
+          <button onclick="Search()">&#x1F50E;</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="trolley">
+    <img src="trolley.png" href ="cart.html">
+    <span id="productCount">0</span>
+  </div>
   <nav class="main-menu">
   <ul>
     <li>
@@ -28,16 +45,14 @@
   </nav>
   <div class="catalog"></div>
   <div class="overlay" onclick="hideModal()"></div>
+
   <div class = "modal">
     <div class="message" >
         Sorry, not ready yet<br>
         Извините, еще не готово<br>
     </div>
-    <button onclick="hideModal()">Ладно</button>
+    <!-- <button onclick="hideModal()">Ладно</button> -->
   </div>
-                <footer onload="FooterLoaded()" id = "footer">
-                  &copy; Версия 2021.1 Beta © 2022 ОАО «Колбасный завод №3» catMeat@mail.com
-                </footer>
 </body>
 
 </html>

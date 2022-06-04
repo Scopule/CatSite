@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css2?family=Ruslan+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+    <title>Самовывоз</title>
+    <script src="script.js"></script>
+</head>
+<body>
+  <div class="header">
+    <div class="logo">
+      <img src="Logo.png" alt="">
+    </div>
+    <div class = "innerHeader"><span style="color: #c00000;">К</span>расная кузница</div>
+    <div class="menu">
+      <div class="tabContainer">
+        <a href="index.html">Каталог</a>
+        <a href="contacts.html">Контакты</a>
+        <a href="delivery.html">Самовывоз</a>
+        <a href="promo.html">Акции</a>
+        <!-- <a href="us.html">Us</a> -->
+      </div>
+    </div>
+  </div>
+  <div class="trolley">
+    <img src="trolley.png" href ="cart.html">
+    <span id="productCount">0</span>
+  </div>
+  <nav class="main-menu">
+  <ul>
+    <li>
+    <div class="searchbox">
+      <input type="search" placeholder="Поиск по котам" id="Search"> 
+      <button onclick="Search()">&#x1F50E;</button>
+    </div>
+    </li>
+  </ul>
+  </nav>
+
+  <div class="points">
+    <div class="adress"><a>Новосибирск Ул. Невского 8/9</a></div>
+  </div>
+  <div class="points">
+    <div class="adress"><a>Новосибирск Ул. Самоходная 14</a></div>
+  </div>
+  <div class="points">
+    <div class="adress"><a>Новосибирск Ул. Ленина 90а</a></div>
+  </div>
+  <div class="points">
+    <div class="adress"><a>Новосибирск Ул. Победы 18/4</a></div>
+  </div>
+  <div class="points">
+    <div class="adress"><a>Новосибирск Ул. Тенистая 7</a></div>
+  </div>
+  <div class="map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2284.1593464127013!2d82.94936162688525!3d55.07546091148274!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x42dfe57b6f41593f%3A0x9a7d9d8d37ba46a4!2z0YPQuy4g0JDQu9C10LrRgdCw0L3QtNGA0LAg0J3QtdCy0YHQutC-0LPQviwgOC85LCDQndC-0LLQvtGB0LjQsdC40YDRgdC6LCDQndC-0LLQvtGB0LjQsdC40YDRgdC60LDRjyDQvtCx0LsuLCA2MzAwNzU!5e0!3m2!1sru!2sru!4v1654341409058!5m2!1sru!2sru"  style="border-radius: 15px;"width="900" height="700" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+  <div class="overlay" onclick="hideModal()"></div>
+  <div class = "modal">
+    <div class="message" >
+        Sorry, not ready yet<br>
+        Извините, еще не готово<br>
+    </div>
+    <button onclick="hideModal()">Ладно</button>
+  </div>
+</body>
+</html>

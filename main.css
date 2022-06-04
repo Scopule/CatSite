@@ -1,18 +1,131 @@
 html, body{
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #F3F3F3;
+    background-color: rgb(227, 202, 165);
+}
+.header{
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    display: block;
+    background-color: rgb(173, 139, 115);
+    box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+    z-index: 100;
+    overflow: visiable;
+}
+.logo{
+    position: absolute;
+    left: 30px;
+    /* background-color: chocolate; */
+    height: 100%;
+    width: 80px;
+    z-index: 102;
+}
+.contact{
+    position: relative;
+    top: 100px;
+    background-color: rgb(173, 139, 115);
+    border-radius: 15px;
+    width: 80%;
+    margin: 50px;
+    height: 200px;
+}
+.contact img{
+    position: relative;
+    top: 10px;
+    left: 10px;
+    height: 90%;
+    border-radius: 15px;
+}
+.contactName{
+    position: relative;
+    font-family: 'Ruslan Display', cursive;    color: white;
+    font-size: 50px;
+    left: 200px;
+    bottom: 180px;
+}
+.contactNumb{
+    position: relative;
+    font-family: 'Ruslan Display', cursive;    color: white;
+    font-size: 100px;
+    left: 200px;
+    bottom: 192px;
+}
+.logo img{
+    height: 120px;
+    width: 120px;
+    background-color: rgb(173, 139, 115);
+    border-radius: 20px;
+    z-index: 102;
+}
+.innerHeader{
+    width: fit-content;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+    /* background-color: crimson; */
+    text-align: center;
+    font-family: 'Ruslan Display', cursive;    font-size: 60px;
+    color: white;
+}
+.menu{
+    position: fixed;
+    background-color: rgb(206, 171, 147);
+    width: 100%;
+    height: 60px;
+}
+.tabContainer{
+    /* background-color: blueviolet; */
+    height: 100%;
+    width: 1070px;
+    display: block;
+    margin: 7px auto;
+    z-index: 99;
+}
+.tabContainer a{
+    font-size: 30px;
+    margin-left: 95px;
+    margin-top: 60px;
+    text-decoration: none;
+    font-family: 'Ruslan Display', cursive;    color: white;
+}
+.tabContainer a:hover{
+    color: rgb(173, 139, 115);
+}
+.catalog{
+    background-color: rgb(227, 202, 165);
+    position: relative;
+    top: 60px;
 }
 header .info{
     background-color: #DEDEDE;
     text-align: right;
-
+}
+.infoComp{
+    position: relative;
+    font-family: 'Ruslan Display', cursive;    color: white;
+    font-size: 40px;
+    top: 20px;
+    left: 15px;
 }
 header h1{
     background-color: #80EEC3;
     margin: 0;
     padding: 20px 0 20px 15px;
+}
+.searchbox{
+    position: relative;
+    width: 220px;
+    bottom: 30px;
+    left: -150px;
+}
+.searchbox input{
+    height: 35px;
+    border-radius: 2px;
+}
+.searchbox button{
+    height: 30px;
+    border-radius: 16px;
 }
 nav{
     background-color: #80EEC3;
@@ -23,7 +136,104 @@ nav ul{
     padding: 0;
     display: inline-block;
 }
-
+.points{
+    position: relative;
+    display: block;
+    background-color: rgb(173, 139, 115);
+    border-radius: 15px;
+    width: 900px;
+    height: 100px;
+    top: 100px;
+    left: 25px;
+    margin: 5px;
+}
+.adress{
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-size: 50px;
+    top: 20px;
+    left: 15px;
+}
+.map{
+    position: absolute;
+    display: inline-block;
+    background-color: rgb(173, 139, 115);
+    border-radius: 15px;
+    width: 900px;
+    height: 700px;
+    top: 160px;
+    right: 25px;
+    margin: 5px;
+}
+.prom{
+    position: relative;
+    display: block;
+    background-color: rgb(173, 139, 115);
+    border-radius: 15px;
+    width: 900px;
+    height: 200px;
+    top: 100px;
+    left: 25px;
+    margin: 10px;
+}
+.promName{
+    position: relative;
+    font-family: 'Ruslan Display', cursive;    color: white;
+    font-size: 50px;
+    top: 10px;
+    left: 15px;
+}
+.promDate{
+    position: relative;
+    font-family: 'Ruslan Display', cursive;    color: white;
+    font-size: 40px;
+    top: 10px;
+    left: 15px;
+}
+.usInfo{
+    position: relative;
+    display: inline-block;
+    background-color: rgb(173, 139, 115);
+    border-radius: 15px;
+    width: 1800px;
+    height: 200px;
+    top: 100px;
+    left: 55px;
+    margin: 5px;
+}
+.person{
+    position: relative;
+    display: inline-block;
+    background-color: rgb(173, 139, 115);
+    border-radius: 15px;
+    width: 440px;
+    height: 570px;
+    top: 100px;
+    left: 55px;
+    margin: 5px;
+}
+.person img{
+    position: relative;
+    border-radius: 20px;
+    width: 300px;
+    left: 75px;
+    top: 30px;
+}
+.personName{
+    position: relative;
+    font-family: 'Ruslan Display', cursive;    color: white;
+    font-size: 40px;
+    top: 20px;
+    left: 70px;
+}
+.promDesc{
+    position: relative;
+    font-family: 'Ruslan Display', cursive;    color: white;
+    font-size: 40px;
+    top: 10px;
+    left: 15px;
+}
 nav ul li{
     width: 200px;
     display: inline-block;
@@ -49,17 +259,42 @@ footer{
     background-color: #DEDEDE;
 }
 .card {
-    display: inline-block;
-    padding: 20px;
-    margin: 0;
+    display: inline-table;
+    padding: 5px;
+    padding-top: 10px;
     vertical-align: top;
 }
+.card.price{
+    text-decoration: none;
+}
+.card button {
+    left: 160px;
+    bottom: 45px;
+    position: relative;
+	background-color:#44c767;
+	border-radius:6px;
+    border-style: none;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-size:17px;
+	padding:16px 31px;
+	text-decoration:none;
+}
+.card button:hover {
+	background-color:#5cbf2a;
+}
+.card button:active {
+	position:relative;
+	bottom: 44px;
+}
 .card .image img,.card .image a:visited, .card .image a:active{
-    width: 500px;
-    height: 600px;
+    width: 300px;
+    height: 350px;
+    border-radius: 10px;
 }
 img:hover{
-    transform: scale(1.2);
+    transform: scale(1.05);
     transition: all(300ms);
 }
 .modal{
@@ -74,19 +309,46 @@ img:hover{
     margin-left: -150px;
 
     border: 1px solid #333;
-    border-radius: 3px;
-    background-color: #6BCBA5;
-    text-align: center;
+    border-radius: 10px;
+    background-color: rgb(206, 171, 147);
+    text-align: justify;
     padding: 10px;
     box-shadow: 0 0 7px #333;
 
 }
-.modal.message{
+.modal i{
+    font-family: 'Ruslan Display', cursive;    color: white;
+    font-size: 20px;
+    margin-bottom: 18px;
+}
+.modal a{
+    font-family: 'Ruslan Display', cursive;    color: white;
+    font-size: 40px;
+    margin-bottom: 18px;
+}
+.modal li{
+    font-family: 'Ruslan Display', cursive;    color: white;
+    font-size: 50px;
     margin-bottom: 18px;
 }
 .modal button{
     padding: 7px;
 }
+.modalIMG img{
+    width: 400px;
+}
+.product-name{
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    color: #101010;
+    text-decoration: none;
+    text-decoration-color: #DEDEDE;
+}
+.price{
+    font-family: 'Roboto', sans-serif;
+    font-size: 40px;
+}
+
 .overlay{
     visibility: hidden;
     opacity: 0;
@@ -103,10 +365,15 @@ img:hover{
     max-width: 300px;
     }
 .trolley{
-    position: absolute;
-    right: 20px;
+    background-color: rgb(173, 139, 115);
+    border-radius: 20px;
+    position: fixed;
+    right: 30px;
+    z-index: 101;
 }
 .trolley img{
+    position: relative;
+    right: 7px;
     width: 90px;
     padding-top: 30px;
 }
